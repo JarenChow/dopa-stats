@@ -15,10 +15,13 @@
 <body>
 
 <div id="app" style="width: 100%;height: 100%;"></div>
+<div id="corner" style="position: fixed;top: 0;right: 0;width: 80px;height: 80px;"></div>
 <script src="https://cdn.jsdelivr.net/npm/dopa"></script>
 <script src="https://cdn.jsdelivr.net/npm/dopa-stats"></script>
+<script src="https://cdn.jsdelivr.net/npm/dopa-corner"></script>
 <script>
   createStats('#app');
+  createCorner('#corner', 'https://github.com/JarenChow/dopa-stats');
 </script>
 
 </body>
