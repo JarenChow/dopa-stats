@@ -1,6 +1,6 @@
 {
   "name": "dopa-stats",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Inspiration from mrdoob/stats.js, rewritten with dopa(canvas)",
   "main": "dist/bundle.js",
   "scripts": {

@@ -158,8 +158,6 @@
     stats.on('visibilitychange', (visible) => {
       visible ? stats.render() : stats.pause();
     });
-    // stats.addPanel('TEST1', '#ffff88', '#222211');
-    // stats.addPanel('TEST2', '#ff88ff', '#221122');
     return stats;
   }
 
