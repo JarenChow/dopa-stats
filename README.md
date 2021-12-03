@@ -20,3 +20,11 @@ Inspiration from mrdoob/stats.js, rewritten with dopa(canvas)
   // stats.removePanel('TEST1');
 </script>
 ```
+
+# dependency
+
+[dopa](https://github.com/JarenChow/dopa)
+
+# page
+
+[dopa-stats](https://JarenChow.github.io/dopa-stats)
