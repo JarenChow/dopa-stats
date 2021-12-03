@@ -1,0 +1,29 @@
+{
+  "name": "dopa-stats",
+  "version": "1.0.0",
+  "description": "Inspiration from mrdoob/stats.js, rewritten with dopa(canvas)",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JarenChow/dopa-stats.git"
+  },
+  "keywords": [
+    "canvas",
+    "stats",
+    "fps",
+    "ms",
+    "panel"
+  ],
+  "author": "JarenChow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JarenChow/dopa-stats/issues"
+  },
+  "homepage": "https://github.com/JarenChow/dopa-stats#readme",
+  "dependencies": {
+    "dopa": "^1.1.0"
+  }
+}
