@@ -70,7 +70,7 @@
     function render() {
       topBack.fill();
       text.fill();
-      image.draw();
+      image.fill();
       right.fill();
       rightAlpha.fill();
     }
