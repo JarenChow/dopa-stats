@@ -1,15 +1,17 @@
 import dopa from 'dopa';
 
 export default function createStats(container) {
-  let stats = new dopa.Canvas({
-    container: container,
-    duration: Infinity
-  });
-
   const WIDTH = 80, HEIGHT = 48,
     TEXT_X = 3, TEXT_Y = 2,
     GRAPH_X = 3, GRAPH_Y = 15,
     GRAPH_WIDTH = 74, GRAPH_HEIGHT = 30;
+
+  let stats = new dopa.Canvas({
+    container: container,
+    duration: Infinity,
+    width: WIDTH,
+    height: HEIGHT
+  });
 
   let background = stats.create('rect', {
     width: WIDTH,
@@ -67,9 +69,15 @@ export default function createStats(container) {
     rightAlpha.fill();
   }
 
+  function resetMinMax(panel) {
+    panel.min = Infinity;
+    panel.max = 0;
+  }
+
   let panels = [], map = {}, panel, mode;
   stats.addPanel = (name, fg, bg) => {
-    let pan = {name: name, fg: fg, bg: bg, min: Infinity, max: 0};
+    let pan = {name: name, fg: fg, bg: bg};
+    resetMinMax(pan);
     map[name] = pan;
     panels.push(pan);
   };
@@ -105,20 +113,12 @@ export default function createStats(container) {
     }
   };
 
-  let pointer = null, cursor;
   stats.on('resize', renderBackground);
-  stats.on('pointerdown', (ev) => {
-    if (pointer) ev.stop(), stats.showPanel(panels[++mode % panels.length].name);
+  stats.on('click', () => {
+    stats.showPanel(panels[++mode % panels.length].name);
   });
-  stats.on('pointermove', (ev) => {
-    if (pointer) ev.stop();
-    let mousein = background.isQuickInPath(ev.x, ev.y),
-      xor = mousein ^ (pointer !== null);
-    if (xor) {
-      pointer = mousein ? background : null;
-      if (pointer) cursor = stats.cursor, stats.cursor = 'pointer';
-      else stats.cursor = cursor;
-    }
+  stats.on('contextmenu', () => {
+    resetMinMax(panel);
   });
 
   stats.addPanel('FPS', '#00ffff', '#000022');
@@ -150,5 +150,7 @@ export default function createStats(container) {
   stats.on('visibilitychange', (visible) => {
     visible ? stats.render() : stats.pause();
   });
+  // stats.addPanel('TEST1', '#ffff88', '#222211');
+  // stats.addPanel('TEST2', '#ff88ff', '#221122');
   return stats;
 }

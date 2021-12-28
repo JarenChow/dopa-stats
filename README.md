@@ -1,5 +1,5 @@
 # dopa-stats
-Inspiration from mrdoob/stats.js, rewritten with dopa(canvas)
+Inspiration from [mrdoob/stats.js](https://github.com/mrdoob/stats.js), rewritten with dopa(canvas)
 
 # install
 
@@ -9,7 +9,7 @@ Inspiration from mrdoob/stats.js, rewritten with dopa(canvas)
 # usage
 
 ```html
-<div id="stats" style="position: fixed;left: 0;top: 0;width: 80px;height: 48px;opacity: 0.9;"></div>
+<div id="stats" style="position: fixed;left: 0;top: 0;opacity: 0.9;cursor: pointer;"></div>
 
 <script>
   let stats = createStats('#stats');
