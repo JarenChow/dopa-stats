@@ -117,7 +117,8 @@ export default function createStats(container) {
   stats.on('click', () => {
     stats.showPanel(panels[++mode % panels.length].name);
   });
-  stats.on('contextmenu', () => {
+  stats.on('contextmenu', (ev) => {
+    ev.preventDefault();
     resetMinMax(panel);
   });
 
