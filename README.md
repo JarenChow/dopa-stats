@@ -18,6 +18,7 @@ Inspiration from [mrdoob/stats.js](https://github.com/mrdoob/stats.js), rewritte
   // stats.showPanel('TEST1');
   // stats.updatePanel('TEST1', value, maxValue);
   // stats.removePanel('TEST1');
+  // stats.destroy();
 </script>
 ```
 
